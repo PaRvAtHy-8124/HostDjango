@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}  
+<div style="border:1px solid red ;margin:200px">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td><label>Username:</label></td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input type="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label>Password:</label></td>
+                <td><input type="password" name="password" id="txtNewPassword"></td>
+            </tr>
+            <tr>
+                <td><label>Password Again:</label></td>
+                <td><input type="password" name="cpassword" id="txtConfirmPassword"></td>
+            </tr>
+        </table>
+        <input type="submit" value="SignUp">
+    </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch">
+    <script>
+        function checkPasswordMatch() {
+            var password = $("#txtNewPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword)
+
+                $("#CheckPasswordMatch").html("Passwords does not match!");
+            else
+                $("#CheckPasswordMatch").html("Passwords match.");
+        }
+        $(document).ready(function () {
+           $("#txtConfirmPassword").keyup(checkPasswordMatch);
+        }); 
+        </script>
+
+{% endblock %}

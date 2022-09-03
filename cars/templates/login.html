@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Login</title>
+</head>
+<body>
+    {% for msg in messages %} 
+    {{msg}} 
+    {% endfor %}
+    <div style="border:1px solid red;"></div>
+    <form action="" method="post">
+        {% csrf_token %} 
+        <table><tr>{{data.as_table}}</tr></table>
+        <input type="submit" value="Login">
+    </form>
+    <div style="border: 2px solid red;"></div>
+</body>
+</html>
+{% endblock %}

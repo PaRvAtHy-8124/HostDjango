@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<head>
+    <title><center>Home</center></title>
+</head>
+<body>
+    {% for msg in messages %} 
+    {{msg}} 
+    {% endfor %}
+    <br>
+    Welcome {{user.Username}}
+    <br>
+    <a href="{% url 'cars:gallerys' %}">Gallery</a>
+    <br>
+    <a href="{% url 'cars:logout' %}">Logout</a>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<body>
+    {% for img in images %}
+    <a href="{% url 'cars:detail' img.id %}"><img src="{{img.Photo.url}}" alt="" height="200px" width="200px"></a>
+    {% endfor %}
+
+</body>
+</html>
+{% endblock %}

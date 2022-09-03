@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Details</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <img src="{{det.Photo.url}}" alt="" height="200px" width="200px">
+        </tr>
+        <tr>
+            <td>Name : {{det.Name}}</td>
+        </tr>
+        <tr>
+            <td>Brand : {{det.Brand}}</td>
+        </tr>
+        <tr>
+            <td>Price : {{det.Price}}</td>
+        </tr>
+        
+
+    </table>
+    <a href="{% url 'cars:gallerys' %}"><input type="submit" value="Back"></a>
+     
+</body>
+</html>
+
+{% endblock %}
